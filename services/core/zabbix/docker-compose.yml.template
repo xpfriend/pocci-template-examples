@@ -1,0 +1,25 @@
+cat << EOF
+# Zabbix
+zabbixdb:
+  image: zabbix/zabbix-db-mariadb
+  env_file:
+    - ./.env
+  environment:
+    - MARIADB_USER=${ZABBIX_DB_USER}
+    - MARIADB_PASS=${ZABBIX_DB_PASS}
+    - DB_innodb_buffer_pool_size=768M
+
+zabbix:
+  image: zabbix/zabbix-2.4
+  env_file:
+    - ./.env
+  environment:
+    - ZS_DBHost=zabbixdb
+    - ZS_DBUser=${ZABBIX_DB_USER}
+    - ZS_DBPassword=${ZABBIX_DB_PASS}
+  links:
+    - zabbixdb:zabbixdb
+  ports:
+    - "10051:10051"
+
+EOF

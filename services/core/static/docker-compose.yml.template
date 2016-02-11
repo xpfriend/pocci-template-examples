@@ -1,0 +1,11 @@
+cat << EOF
+# static
+static:
+  image: nginx:${VERSION_NGINX}
+  env_file:
+    - ./.env
+
+  volumes:
+   - ${STATIC_DIR}:/usr/share/nginx/html:ro
+
+EOF

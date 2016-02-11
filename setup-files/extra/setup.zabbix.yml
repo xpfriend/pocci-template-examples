@@ -1,0 +1,9 @@
+pocci:
+  services:
+    - zabbix
+  environment:
+    TZ: Etc/UTC
+
+zabbix:
+  dbUser: username
+  dbPassword: my_password

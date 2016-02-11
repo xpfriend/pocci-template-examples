@@ -1,0 +1,4 @@
+pocci:
+  services:
+    - kanban
+    - gitlab

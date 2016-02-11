@@ -1,0 +1,9 @@
+pocci:
+  services:
+    - static
+  environment:
+    TZ: Etc/UTC
+
+static:
+  dir: /home/pocci/html
+
