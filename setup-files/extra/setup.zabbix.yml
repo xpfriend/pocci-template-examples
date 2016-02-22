@@ -1,6 +1,7 @@
 pocci:
   services:
     - zabbix
+  https: false
   environment:
     TZ: Etc/UTC
 

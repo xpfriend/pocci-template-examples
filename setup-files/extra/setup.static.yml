@@ -1,6 +1,7 @@
 pocci:
   services:
     - static
+  https: false
   environment:
     TZ: Etc/UTC
 
