@@ -1,0 +1,13 @@
+cat << EOF
+# Pocci Private Certificate Authority
+ca:
+  image: xpfriend/workspace-nodejs
+  env_file:
+    - ./.env
+  volumes:
+    - ./volumes/ca:/app
+    - ./nginx/ssl:/ssl
+  working_dir: /app
+  command: bash start.sh
+
+EOF

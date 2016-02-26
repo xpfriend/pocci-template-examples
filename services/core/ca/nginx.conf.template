@@ -1,0 +1,5 @@
+SERVICE_HOST="${CA_HOST}"
+SERVER_NAME="${SERVICE_HOST} ca ca.*"
+PROXY_PASS="ca:9898"
+
+source ${LIB_DIR}/create-nginx-conf

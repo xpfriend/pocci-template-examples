@@ -8,15 +8,24 @@ Pocci-box の Zabbix 連携機能を意識したテンプレート (Template Poc
 
 利用方法
 --------
-1.  環境変数 **POCCI_TEMPLATE** に
-    `"template https://github.com/xpfriend/pocci-template-examples.git"` を指定する。
+1.  以下の手順でPocciの構成を行う。
+    *   **Pocci のコマンドでセットアップする場合:**
+        1.  環境変数 **POCCI_TEMPLATE** に
+            `"template https://github.com/xpfriend/pocci-template-examples.git"` を指定する。
 
-    ```bash
-    export POCCI_TEMPLATE="template https://github.com/xpfriend/pocci-template-examples.git"
-    ```
+            ```bash
+            export POCCI_TEMPLATE="template https://github.com/xpfriend/pocci-template-examples.git"
+            ```
 
-1.  引数に `setup-files/extra/setup.zabbix.yml` を指定して `./create-service`
-    を実行する。
+        1.  引数に `setup-files/extra/setup.zabbix.yml` を指定して `./create-service`
+            を実行する。
+    *   **Pocci-box でセットアップする場合:**
+        1.  environment.sh に以下の記述を行い、VMの作成を行う。
+            ```bash
+            export template="template https://github.com/xpfriend/pocci-template-examples.git"
+            export service_type=setup-files/extra/setup.zabbix.yml
+            ```
+
 1.  ブラウザを利用するPCの hosts ファイルに `zabbix.pocci.test` を登録し、
     `http://zabbix.pocci.test/` でアクセスする。
 1.  ユーザーID: `admin`、パスワード: `zabbix` でログインできる。
