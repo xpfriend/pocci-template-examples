@@ -1,0 +1,31 @@
+pocci:
+  services:
+    - gitlab
+    - user
+    - jenkins
+
+user:
+  users:
+    - uid:          jenkinsci
+      givenName:    Jenkins
+      sn:           CI
+      displayName:  Jenkins
+      mail:         jenkins-ci@localhost.localdomain
+      userPassword: password
+      labeledURI:   "https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png"
+
+jenkins:
+  jobs:
+    - example/example-serverspec
+  nodes:
+    - serverspec:
+        from: uzyexe/serverspec
+
+gitlab:
+  groups:
+    - groupName: example
+      projects:
+        - projectName:    example-serverspec
+          commitMessage:  "import example codes (#1)"
+          issues:
+            - import example codes
