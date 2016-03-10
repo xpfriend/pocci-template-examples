@@ -23,4 +23,5 @@ Extra services
 *   [setup-files/extra/setup.static.yml](./setup-files/extra/setup.static.yml)
 *   [setup-files/extra/setup.zabbix.yml](./setup-files/extra/setup.zabbix.yml)
 *   [setup-files/extra/setup.ca.yml](./setup-files/extra/setup.ca.yml)
+*   [setup-files/extra/setup.nexus.yml](./setup-files/extra/setup.nexus.yml)
 

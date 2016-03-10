@@ -25,3 +25,5 @@ Pocci セットアップファイルおよびテンプレート例
     [setup-files/extra/setup.zabbix.yml](./setup-files/extra/setup.zabbix.yml)
 *   [プライベートCA (認証局) サービス](./setup-files/extra/setup.ca.yml.ja.md) :
     [setup-files/extra/setup.ca.yml](./setup-files/extra/setup.ca.yml)
+*   [Nexus サーバ](./setup-files/extra/setup.nexus.yml.ja.md) :
+    [setup-files/extra/setup.nexus.yml](./setup-files/extra/setup.nexus.yml)

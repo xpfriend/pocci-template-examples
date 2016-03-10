@@ -1,0 +1,37 @@
+pocci:
+  services:
+    - nexus
+    - gitlab
+    - user
+    - jenkins
+
+user:
+  users:
+    - uid:          jenkinsci
+      givenName:    Jenkins
+      sn:           CI
+      displayName:  Jenkins
+      mail:         jenkins-ci@localhost.localdomain
+      userPassword: password
+      labeledURI:   "https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png"
+
+jenkins:
+  jobs:
+    - example-nexus/java-lib
+    - example-nexus/java-app
+  nodes:
+    - java
+
+gitlab:
+  smtpEnabled: true
+  groups:
+    - groupName: example-nexus
+      projects:
+        - projectName:    java-lib
+          commitMessage:  "import example codes (#1)"
+          issues:
+            - import example codes
+        - projectName:    java-app
+          commitMessage:  "import example codes (#1)"
+          issues:
+            - import example codes
