@@ -27,3 +27,5 @@ Pocci セットアップファイルおよびテンプレート例
     [setup-files/extra/setup.ca.yml](./setup-files/extra/setup.ca.yml)
 *   [Nexus サーバ](./setup-files/extra/setup.nexus.yml.ja.md) :
     [setup-files/extra/setup.nexus.yml](./setup-files/extra/setup.nexus.yml)
+*   [Taiga](./setup-files/extra/setup.taiga.yml.ja.md) :
+    [setup-files/extra/setup.taiga.yml](./setup-files/extra/setup.taiga.yml)

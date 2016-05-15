@@ -1,0 +1,56 @@
+
+if [ ! -d "${CONFIG_DIR}/image/taiga-front" ]; then
+    mkdir -p ${CONFIG_DIR}/image/taiga-front
+fi
+
+cp taiga-front.Dockerfile ${CONFIG_DIR}/image/taiga-front/Dockerfile
+
+cat << EOF
+# Taiga
+taigadata:
+  image: tianon/true
+  volumes:
+    - /usr/local/taiga/media
+    - /usr/local/taiga/static
+
+taigadb:
+  image: sameersbn/postgresql:latest
+  environment:
+    - DB_USER=${TAIGA_DB_USER}
+    - DB_PASS=${TAIGA_DB_PASS}
+    - DB_NAME=${TAIGA_DB_NAME}
+
+taigaback:
+  image: htdvisser/taiga-back:stable
+  dns: ${DNS_ADDRESS}
+  environment:
+    - HOSTNAME=${TAIGA_HOST}
+    - DEBUG=True
+    - SECRET_KEY=${TAIGA_SECRET_KEY}
+    - API_SCHEME=${TAIGA_PROTOCOL%:*}
+    - FRONT_SCHEME=${TAIGA_PROTOCOL%:*}
+    - EMAIL_HOST=${TAIGA_SMTP_HOST}
+    - EMAIL_PORT=${TAIGA_SMTP_PORT}
+    - DEFAULT_FROM_EMAIL=${TAIGA_MAIL_ADDRESS}
+    - POSTGRES_USER=${TAIGA_DB_USER}
+    - POSTGRES_PASSWORD=${TAIGA_DB_PASS}
+    - POSTGRES_DB_NAME=${TAIGA_DB_NAME}
+  links:
+    - taigadb:postgres
+  volumes_from:
+    - taigadata
+  volumes:
+    - ${POCCI_LOG_DIR}/taiga/back:/usr/local/taiga/logs
+
+taiga:
+  build: ${CONFIG_DIR}/image/taiga-front
+  hostname: ${TAIGA_HOST}
+  dns: ${DNS_ADDRESS}
+  links:
+    - taigaback
+  volumes_from:
+    - taigadata
+  volumes:
+    - ${POCCI_LOG_DIR}/taiga/front:/usr/local/taiga/logs
+
+EOF

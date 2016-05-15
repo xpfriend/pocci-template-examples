@@ -1,0 +1,34 @@
+cat << EOF
+#
+# Taiga
+#
+<source>
+  type tail
+  format /^(?<log>.*)$/
+  path ${POCCI_LOG_DIR}/taiga/front/gunicorn.stdout.log
+  pos_file ${POCCI_LOG_DIR}/taiga.front.gunicorn.stdout.log.pos
+  tag pocci.taiga.front.gunicorn.stdout
+</source>
+<source>
+  type tail
+  format /^(?<log>.*)$/
+  path ${POCCI_LOG_DIR}/taiga/front/gunicorn.stderr.log
+  pos_file ${POCCI_LOG_DIR}/taiga.front.gunicorn.stderr.log.pos
+  tag pocci.taiga.front.gunicorn.stderr
+</source>
+<source>
+  type tail
+  format /^(?<log>.*)$/
+  path ${POCCI_LOG_DIR}/taiga/back/gunicorn.stdout.log
+  pos_file ${POCCI_LOG_DIR}/taiga.back.gunicorn.stdout.log.pos
+  tag pocci.taiga.back.gunicorn.stdout
+</source>
+<source>
+  type tail
+  format /^(?<log>.*)$/
+  path ${POCCI_LOG_DIR}/taiga/back/gunicorn.stderr.log
+  pos_file ${POCCI_LOG_DIR}/taiga.back.gunicorn.stderr.log.pos
+  tag pocci.taiga.back.gunicorn.stderr
+</source>
+
+EOF

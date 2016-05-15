@@ -1,0 +1,24 @@
+pocci:
+  services:
+    - taiga
+    - gitlab
+    - user
+
+user:
+  users:
+    - uid:          jenkinsci
+      givenName:    Jenkins
+      sn:           CI
+      displayName:  Jenkins
+      mail:         jenkins-ci@localhost.localdomain
+      userPassword: password
+      labeledURI:   "https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png"
+    - uid:          boze
+      givenName:    Taro
+      sn:           BOZE
+      displayName:  "BOZE, Taro"
+      mail:         boze@localhost.localdomain
+      userPassword: password
+
+gitlab:
+  smtpEnabled: true
