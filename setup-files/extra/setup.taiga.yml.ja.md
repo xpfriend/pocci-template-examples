@@ -59,10 +59,10 @@ Taiga サービスを作成するセットアップファイルの例。
 --------------------
 `services/core/taiga` ディレクトリ。
 
-### docker-compose.yml.template, taiga-front.Dockerfile
+### docker-compose.yml.template, taiga-front.Dockerfile, taiga-back.Dockerfile
 Dockerコンテナ設定
 *   [htdvisser/taiga-docker](https://github.com/htdvisser/taiga-docker) を使用。
-*   front側コンテナはLDAP連携を行うために、イメージのビルドを実行している
+*   LDAP連携を行うために、イメージのビルドを実行している
 
 ### fluent.conf.template
 ログファイルの内容を fluentd コンテナに天とするための設定。
@@ -71,7 +71,7 @@ Dockerコンテナ設定
 Pocci標準のリバースプロキシからアクセスできるようにするための設定。
 
 ### update-container.sh
-データベースの初期設定とLDAP連携設定を行う。
+データベースの初期設定を行う。
 
 ### js/taiga.js
 データベースおよびメールアドレス関連の環境変数設定を行う。

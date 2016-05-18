@@ -1,9 +1,28 @@
-
 if [ ! -d "${CONFIG_DIR}/image/taiga-front" ]; then
     mkdir -p ${CONFIG_DIR}/image/taiga-front
 fi
 
+if [ ! -d "${CONFIG_DIR}/image/taiga-back" ]; then
+    mkdir -p ${CONFIG_DIR}/image/taiga-back
+fi
+
 cp taiga-front.Dockerfile ${CONFIG_DIR}/image/taiga-front/Dockerfile
+cp taiga-back.Dockerfile ${CONFIG_DIR}/image/taiga-back/Dockerfile
+
+cat << EOF >${CONFIG_DIR}/image/taiga-back/taiga-settings
+INSTALLED_APPS += ["taiga_contrib_ldap_auth"]
+
+LDAP_SERVER = "${LDAP_URL}"
+LDAP_PORT = 389
+LDAP_BIND_DN = "${LDAP_BIND_DN}"
+LDAP_BIND_PASSWORD = "${LDAP_BIND_PASSWORD}"
+LDAP_SEARCH_BASE = "${LDAP_BASE_DN}"
+LDAP_SEARCH_PROPERTY = "${LDAP_ATTR_LOGIN}"
+LDAP_SEARCH_SUFFIX = None
+LDAP_EMAIL_PROPERTY = "${LDAP_ATTR_MAIL}"
+LDAP_FULL_NAME_PROPERTY = "displayName"
+EOF
+
 
 cat << EOF
 # Taiga
@@ -23,7 +42,7 @@ taigadb:
     - DB_NAME=${TAIGA_DB_NAME}
 
 taigaback:
-  image: htdvisser/taiga-back:stable
+  build: ${CONFIG_DIR}/image/taiga-back
   dns: ${DNS_ADDRESS}
   env_file:
     - ./.env
@@ -56,7 +75,5 @@ taiga:
     - taigaback
   volumes_from:
     - taigadata
-  volumes:
-    - ${POCCI_LOG_DIR}/taiga/front:/usr/local/taiga/logs
 
 EOF
