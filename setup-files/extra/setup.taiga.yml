@@ -3,9 +3,6 @@ pocci:
     - taiga
     - gitlab
     - user
-  https: false
-  environment:
-    TZ: Etc/UTC
 
 user:
   users:

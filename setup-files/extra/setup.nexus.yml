@@ -4,9 +4,6 @@ pocci:
     - gitlab
     - user
     - jenkins
-  https: false
-  environment:
-    TZ: Etc/UTC
 
 user:
   users:
