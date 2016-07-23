@@ -23,7 +23,6 @@ jenkins:
     - java
 
 gitlab:
-  smtpEnabled: true
   groups:
     - groupName: example-nexus
       projects:

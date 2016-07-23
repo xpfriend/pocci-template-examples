@@ -32,15 +32,6 @@ Taiga サービスを作成するセットアップファイルの例。
 
 パラメタ
 --------
-*   **taiga.smtpDomain:** SMTPドメイン
-    *   デフォルトは pocci.domain で指定したドメイン名
-    *   環境変数: `TAIGA_SMTP_DOMAIN`
-*   **taiga.smtpHost:** SMTPサーバホスト名
-    *   デフォルトは `smtp.[pocci.domain で指定したドメイン名]`
-    *   環境変数: `TAIGA_SMTP_HOST`
-*   **taiga.smtpPort:** SMTPサーバポート番号
-    *   デフォルトは `25`
-    *   環境変数: `TAIGA_SMTP_PORT`
 *   **taiga.mailAddress:** Taigaのメールアドレス
     *   デフォルトは pocci.adminMailAddress で指定したアドレス
     *   環境変数: `TAIGA_MAIL_ADDRESS`

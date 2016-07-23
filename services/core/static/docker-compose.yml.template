@@ -1,7 +1,7 @@
 cat << EOF
 # static
 static:
-  image: nginx:${VERSION_NGINX}
+  image: nginx
   env_file:
     - ./.env
 

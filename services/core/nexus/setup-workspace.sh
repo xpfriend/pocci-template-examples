@@ -1,4 +1,4 @@
-if [ `grep "^java:$" ${CONFIG_DIR}/workspaces.yml | wc -l` -eq 0 ]; then
+if [ `grep "java:$" ${CONFIG_DIR}/workspaces.yml | wc -l` -eq 0 ]; then
     return
 fi
 

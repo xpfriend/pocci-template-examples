@@ -46,7 +46,7 @@ gitlab コンテナに対する SSH 接続設定を事前に行う必要があ�
       StrictHostKeyChecking no
     ```
 
-    *   **IPアドレス**は `docker inspect poccis_gitlab_1` で調査できる。
+    *   **IPアドレス**は `docker inspect poccis_gitlab_1 |grep IPAddress` で調査できる。
 
 #### ポイント
 `${POCCI_DIR}/config/.ssh` は、ワークスペース (serverspec コンテナ)

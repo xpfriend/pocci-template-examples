@@ -3,6 +3,7 @@ pocci:
     - taiga
     - gitlab
     - user
+    - smtp
 
 user:
   users:
@@ -19,6 +20,3 @@ user:
       displayName:  "BOZE, Taro"
       mail:         boze@localhost.localdomain
       userPassword: password
-
-gitlab:
-  smtpEnabled: true

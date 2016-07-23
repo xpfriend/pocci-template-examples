@@ -1,7 +1,7 @@
 cat << EOF
 # Pocci Private Certificate Authority
 ca:
-  image: xpfriend/workspace-nodejs
+  image: xpfriend/workspace-nodejs:3.1.0
   env_file:
     - ./.env
   volumes:

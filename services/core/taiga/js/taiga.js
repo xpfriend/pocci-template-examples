@@ -2,6 +2,7 @@
 var path = require('path');
 var parse = require('url').parse;
 var util = require('pocci/util.js');
+var smtp = require('pocci/smtp.js');
 
 module.exports = {
   addDefaults: function(options) {
@@ -11,9 +12,9 @@ module.exports = {
     options.taiga.dbUser      = options.taiga.dbUser      || 'taiga';
     options.taiga.dbPassword  = options.taiga.dbPassword  || util.getRandomString();
     options.taiga.dbName      = options.taiga.dbName      || 'taiga';
-    options.taiga.smtpDomain  = options.taiga.smtpDomain  || options.pocci.domain;
-    options.taiga.smtpHost    = options.taiga.smtpHost    || 'smtp.' + options.pocci.domain;
-    options.taiga.smtpPort    = options.taiga.smtpPort    || '25';
+    options.taiga.smtpDomain  = options.taiga.smtpDomain  || smtp.getDomain(options);
+    options.taiga.smtpHost    = options.taiga.smtpHost    || smtp.getHost(options);
+    options.taiga.smtpPort    = options.taiga.smtpPort    || smtp.getPort(options);
     options.taiga.mailAddress = options.taiga.mailAddress || options.pocci.adminMailAddress;
   },
   addEnvironment: function(options, environment) {
