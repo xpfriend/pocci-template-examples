@@ -5,7 +5,6 @@ Pocci セットアップファイルおよびテンプレート例
 --------------
 *   GitLab : [setup-files/minimal/setup.gitlab.yml](./setup-files/minimal/setup.gitlab.yml)
 *   Jenkins : [setup-files/minimal/setup.jenkins.yml](./setup-files/minimal/setup.jenkins.yml)
-*   GitLab Kanban Board : [setup-files/minimal/setup.kanban.yml](./setup-files/minimal/setup.kanban.yml)
 *   Redmine : [setup-files/minimal/setup.redmine.yml](./setup-files/minimal/setup.redmine.yml)
 *   SonarQube : [setup-files/minimal/setup.sonar.yml](./setup-files/minimal/setup.sonar.yml)
 *   ユーザー管理 : [setup-files/minimal/setup.user.yml](./setup-files/minimal/setup.user.yml)
@@ -27,5 +26,3 @@ Pocci セットアップファイルおよびテンプレート例
     [setup-files/extra/setup.ca.yml](./setup-files/extra/setup.ca.yml)
 *   [Nexus サーバ](./setup-files/extra/setup.nexus.yml.ja.md) :
     [setup-files/extra/setup.nexus.yml](./setup-files/extra/setup.nexus.yml)
-*   [Taiga](./setup-files/extra/setup.taiga.yml.ja.md) :
-    [setup-files/extra/setup.taiga.yml](./setup-files/extra/setup.taiga.yml)
