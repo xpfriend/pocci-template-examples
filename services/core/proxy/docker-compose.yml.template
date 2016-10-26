@@ -1,0 +1,14 @@
+if [ ! -d "${CONFIG_DIR}/image/proxy" ]; then
+    mkdir -p ${CONFIG_DIR}/image/proxy
+fi
+
+cp Dockerfile ${CONFIG_DIR}/image/proxy
+
+cat << EOF
+proxy:
+  build: ${CONFIG_DIR}/image/proxy
+  dns: ${DNS_ADDRESS}
+  networks:
+    default:
+      ipv4_address: ${PROXY_ADDRESS}
+EOF
