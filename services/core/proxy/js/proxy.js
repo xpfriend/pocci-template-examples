@@ -7,8 +7,11 @@ module.exports = {
     options.proxy.url     = options.proxy.url     || 'http://' + options.proxy.address + ':8888';
   },
   addEnvironment: function(options, environment) {
-    environment.PROXY_ADDRESS   = options.proxy.address;
-    environment.http_proxy      = options.proxy.url;
-    environment.https_proxy     = options.proxy.url;
+    environment.PROXY_ADDRESS = options.proxy.address;
+
+    if(options.pocci.allServices.indexOf('proxy') > -1) {
+      environment.http_proxy  = options.proxy.url;
+      environment.https_proxy = options.proxy.url;
+    }
   }
 };
