@@ -1,5 +1,4 @@
 'use strict';
-var path = require('path');
 var parse = require('url').parse;
 var util = require('pocci/util.js');
 
