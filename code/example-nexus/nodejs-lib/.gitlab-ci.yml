@@ -1,0 +1,5 @@
+build_job:
+  image: xpfriend/workspace-nodejs:3.12.0
+  script:
+    - bash ./build.sh
+    - "curl -f -X POST ${BUILD_TRIGGER_OF_NODEJS_APP}"

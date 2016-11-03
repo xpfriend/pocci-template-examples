@@ -3,7 +3,7 @@ pocci:
     - nexus
     - gitlab
     - user
-    - jenkins
+  https: false
 
 user:
   users:
@@ -19,18 +19,29 @@ jenkins:
   jobs:
     - example-nexus/java-lib
     - example-nexus/java-app
+    - example-nexus/nodejs-lib
+    - example-nexus/nodejs-app
   nodes:
     - java
+    - nodejs
 
 gitlab:
   groups:
     - groupName: example-nexus
       projects:
         - projectName:    java-lib
-          commitMessage:  "import example codes (#1)"
+          commitMessage:  "[ci skip] import example codes (#1)"
           issues:
             - import example codes
         - projectName:    java-app
-          commitMessage:  "import example codes (#1)"
+          commitMessage:  "[ci skip] import example codes (#1)"
+          issues:
+            - import example codes
+        - projectName:    nodejs-lib
+          commitMessage:  "[ci skip] import example codes (#1)"
+          issues:
+            - import example codes
+        - projectName:    nodejs-app
+          commitMessage:  "[ci skip] import example codes (#1)"
           issues:
             - import example codes

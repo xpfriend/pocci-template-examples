@@ -1,0 +1,11 @@
+# Logs
+logs
+*.log
+
+# Dependency directory
+node_modules
+bower_components
+
+# test report
+test-results
+coverage

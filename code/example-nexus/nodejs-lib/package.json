@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-lib",
+  "version": "1.0.0",
+  "main": "app/hello.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-env": "^0.4.4",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.4.5",
+    "xunit-file":"^1.0.0"
+  }
+}
