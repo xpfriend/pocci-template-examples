@@ -1,8 +1,0 @@
-cat << EOF
-# Nexus
-nexus:
-  image: sonatype/nexus:2.13.0-01
-  env_file:
-    - ./.env
-
-EOF
