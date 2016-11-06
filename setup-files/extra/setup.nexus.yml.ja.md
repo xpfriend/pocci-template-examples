@@ -129,11 +129,11 @@ Jenkins でビルドジョブ `nodejs-lib` を実行すると、
     *   **NPM_USER** : admin
     *   **NPM_PASS** : admin123
     *   **NPM_EMAIL** : admin@example.org
-    *   **BUILD_TRIGGER_OF_NODEJS_APP** : java-app ジョブをビルドするための URL。  
+    *   **BUILD_TRIGGER_OF_NODEJS_APP** : nodejs-app ジョブをビルドするための URL。  
         例:
 
         ```
-        http://gitlab.pocci.test/api/v3/projects/4/trigger/builds?token=TOKEN&ref=master
+        http://jenkinsci:password@jenkins.pocci.test/job/nodejs-app/build
         ```
 
 
