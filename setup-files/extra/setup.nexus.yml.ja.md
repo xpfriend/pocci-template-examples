@@ -46,7 +46,7 @@ Nexus サーバを作成するセットアップファイルの例。
 `example-nexus/java-app` のコンパイル時には
 Nexus サーバから `java-lib` の jar ファイルがダウンロードされる。
 
-#### 事前準備
+##### 事前準備
 上記のようなジョブ実行のためには以下の事前準備が必要となる。
 
 1.  example-nexus/java-app の Triggers で、ビルドトリガーを追加し、作成されたトークンをメモする。
@@ -60,7 +60,7 @@ Nexus サーバから `java-lib` の jar ファイルがダウンロードされ
         http://gitlab.pocci.test/api/v3/projects/2/trigger/builds?token=トークン&ref=master
         ```
 
-#### java-lib　(Jenkins でビルドする場合)
+#### java-lib (Jenkins でビルドする場合)
 Jenkins でビルドジョブ `java-lib` を実行すると、
 作成された jar ファイルが Nexus サーバにデプロイされる。
 
@@ -68,7 +68,7 @@ Jenkins でビルドジョブ `java-lib` を実行すると、
 `java-app` のコンパイル時には Nexus サーバから `java-lib` の
 jar ファイルがダウンロードされる。
 
-#### 事前準備
+##### 事前準備
 上記のようなジョブ実行のためには以下の事前準備が必要となる。
 
 1.  Jenkinsの管理 - システムの設定の「グローバルプロパティ - 環境変数」で以下の環境変数を定義する。
@@ -90,14 +90,9 @@ nodejs-lib は Nexus サーバにデプロイされる。
 `example-nexus/nodejs-app` のビルド実行時には
 Nexus サーバから `nodejs-lib` がダウンロードされる。
 
-#### 事前準備
+##### 事前準備
 上記のようなジョブ実行のためには以下の事前準備が必要となる。
 
-1.  以下の手順で **npm Bearer Token Realm** を有効にする。
-    1.  nexus に admin でログインする。
-    1.  管理画面の「Security - Realms」(http://nexus.pocci.test/#admin/security/realms)
-        に移動する。
-    1.  **npm Bearer Token Realm** を **Active** に移動し、Save をクリックする。
 1.  example-nexus/nodejs-app の Triggers で、ビルドトリガーを追加し、作成されたトークンをメモする。
 1.  example-nexus/nodejs-lib の Variables で、以下の環境変数を定義する。
     *   **NPM_USER** : admin
@@ -117,14 +112,9 @@ Jenkins でビルドジョブ `nodejs-lib` を実行すると、
 ビルドジョブ `nodejs-lib` は終了時にビルドジョブ `nodejs-app` を呼び出す。
 `nodejs-app` のビルド実行時には Nexus サーバから `nodejs-lib` がダウンロードされる。
 
-#### 事前準備
+##### 事前準備
 上記のようなジョブ実行のためには以下の事前準備が必要となる。
 
-1.  以下の手順で **npm Bearer Token Realm** を有効にする。
-    1.  nexus に admin でログインする。
-    1.  管理画面の「Security - Realms」(http://nexus.pocci.test/#admin/security/realms)
-        に移動する。
-    1.  **npm Bearer Token Realm** を **Active** に移動し、Save をクリックする。
 1.  Jenkinsの管理 - システムの設定の「グローバルプロパティ - 環境変数」で以下の環境変数を定義する。
     *   **NPM_USER** : admin
     *   **NPM_PASS** : admin123
