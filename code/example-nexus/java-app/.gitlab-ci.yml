@@ -2,3 +2,5 @@ build_job:
   image: xpfriend/workspace-java:3.12.0
   script:
     - bash ./build.sh
+  tags:
+    - docker

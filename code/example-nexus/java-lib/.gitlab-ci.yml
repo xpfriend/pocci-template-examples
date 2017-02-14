@@ -3,3 +3,5 @@ build_job:
   script:
     - bash ./build.sh
     - "curl -f -X POST ${BUILD_TRIGGER_OF_JAVA_APP}"
+  tags:
+    - docker
