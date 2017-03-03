@@ -19,6 +19,7 @@ setup.static.yml
             を実行する。
     *   **Pocci-box でセットアップする場合:**
         1.  environment.sh に以下の記述を行い、VMの作成を行う。
+
             ```bash
             export template="template https://github.com/xpfriend/pocci-template-examples.git"
             export service_type=setup-files/extra/setup.static.yml
